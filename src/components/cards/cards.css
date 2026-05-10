@@ -1,0 +1,217 @@
+/* Shared card base */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 16px var(--color-shadow);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ── User Card ── */
+.user-card {
+  align-items: center;
+  text-align: center;
+}
+
+.user-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.user-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-card__login {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.user-card__cta {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+/* ── Repo Card ── */
+.repo-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.repo-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.repo-card__owner {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-card__name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-card__description {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.repo-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.repo-card__stat {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.repo-card__dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ── Issue Card ── */
+.issue-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.issue-card__number {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.issue-card__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.issue-card__body {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin: 0;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.issue-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.issue-card__avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.issue-card__author {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.issue-card__date {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--color-badge-bg);
+  color: var(--color-badge-text);
+}
+
+.badge--open {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge--closed {
+  background: #fee2e2;
+  color: #991b1b;
+}

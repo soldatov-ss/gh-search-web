@@ -1,0 +1,30 @@
+.results-grid {
+  width: 100%;
+}
+
+.results-grid__count {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-bottom: 1.25rem;
+}
+
+.results-grid__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .results-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .results-grid__list {
+    grid-template-columns: 1fr;
+  }
+}
