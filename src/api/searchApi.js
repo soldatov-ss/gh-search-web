@@ -15,3 +15,8 @@ export async function searchGitHub({ text, type, page = 1, perPage = config.sear
   return data
 }
 
+export async function clearCache() {
+  const { data } = await client.post('/api/clear-cache/')
+  return data
+}
+
